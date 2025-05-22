@@ -1,5 +1,5 @@
 def menu():
-    print("\033[92mDASHBOARD\033[0m") #Extra characters exists to color the text
+    print("\033[92;1mDASHBOARD\033[0m") #Extra characters exists to color the text
         
     # The following code is to display items on the dashboard such as in stock and on order!
     print(f"Items in stock  : \033[92m{len(stock)}\033[0m")
@@ -81,7 +81,7 @@ def menu():
     else:
         print("\033[91mWrong choice, try again!\033[0m")
     menu()
-print("\n\033[92mINVENTORY MANAGEMENT SYSTEM\033[0m\n")
+print("\n\033[92;1mINVENTORY MANAGEMENT SYSTEM\033[0m\n")
 
 # Below are hard coded stock items for demonstration purposes!
 stock = [
