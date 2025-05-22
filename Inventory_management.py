@@ -38,7 +38,6 @@ def menu():
                 ch = False
             except:
                 print("\033[91mPlease, enter the price in digits!\033[0m")
-                ch = True
         supplier = input("Enter the Item Supplier: ")
         stock.append({"sku": sku, "name": name, "price": price, "supplier": supplier})
         print("\n\033[92mItem added to Stock successfully!\033[0m")
