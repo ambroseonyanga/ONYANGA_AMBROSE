@@ -43,16 +43,19 @@ stock = [
 ]
 
 order = []
-# print(f"Items in stock  : \033[92m{len(stock)}\033[0m")
-# print(f"Items on order  : \033[92m{len(order)}\033[0m")
-# print("\n\033[92mMenu Items, choose number!\033[0m")
-# print("1. Display a list of stock items")
-# print("2. Add an item to stock")
-# print("3. Update an item on stock")
-# print("4. Order an item")
-# choice = int(input("\033[92mYour choice?: \033[0m"))
 menu()
 if choice == 1:
     print(f"\033[92m{'SKU':<15} {'Name':<24} {'Price(UGX)':<12} {'Supplier'}\033[0m")
     for i in range(len(stock)):
         print(f"{stock[i]['sku']:<15} {stock[i]['name']:<24} {stock[i]['price']:<12} {stock[i]['supplier']}")
+    print("\n")
+    menu()
+elif choice == 2:
+    sku = input("Enter the Item SKU: ")
+    name = input("Enter the Item Name: ")
+    price = int(input("Enter the Item Price: "))
+    supplier = input("Enter the Item Supplier: ")
+    stock.append({"sku": sku, "name": name, "price": price, "supplier": supplier})
+    print("\n\033[92mThank you for adding item on stock!\033[0m")
+    menu()
+    
