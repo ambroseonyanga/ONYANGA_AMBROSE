@@ -69,10 +69,29 @@ def menu():
         else:
             print("\033[91m\nSorry, an item with that SKU does not exist!\033[0m")
             menu()
+    elif choice == 4:
+        
+        # This is the logic for ordering an item.
+        # Notice the dashboard changes accordingly
+        sku = input("Enter the SKU of the item you want to order: ")
+        for i in range(len(stock)):
+            if sku in stock[i].values():
+                break
+            i = len(stock)
+        if i != len(stock):
+            order.append({"sku": stock[i]["sku"], "name": stock[i]["name"], "price": stock[i]["price"], "supplier": stock[i]["supplier"]})
+            del stock[i]
+            print("\n\033[92mItem ordered successfully\033[0m")
+            menu()
+        else:
+            print("\033[91mSorry, that item is out of stock\033[0m")
+            menu()
+        
     else:
         print("\033[91mWrong choice, try again!\033[0m")
         menu()
 print("\n\033[92mINVENTORY MANAGEMENT SYSTEM\033[0m\n")
+
 # Below are hard coded stock items for demonstration purposes!
 stock = [
     {
